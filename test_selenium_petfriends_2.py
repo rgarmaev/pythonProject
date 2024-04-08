@@ -61,8 +61,8 @@ def test_show_all_pets(driver):
             pets_info.append(pet_info)
             file.write(pet_info + "\n")  # записываем информацию в файл
 
-    images = driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-img-top')
-    names = driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-title')
+    images = driver.find_elements(By.CSS_SELECTOR, '.col-sm-4 left .col-sm-8 right fill')
+    names = driver.find_elements(By.CSS_SELECTOR, '.table .table-hover')
     descriptions = driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-text')
 
     for i in range(len(names)):
