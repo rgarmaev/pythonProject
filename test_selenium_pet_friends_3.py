@@ -44,6 +44,7 @@ def test_pets_list():
     all_attributes = []
     for pet in pets:
         attributes = [attr.text for attr in pet.find_elements(By.TAG_NAME, 'td')]
+        print(attributes)
         all_attributes.extend(attributes)
 
     assert len(all_attributes) == len(set(all_attributes))
