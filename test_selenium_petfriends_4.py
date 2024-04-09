@@ -28,7 +28,7 @@ def test_show_all_pets(driver):
     names = driver.find_elements(By.CSS_SELECTOR, 'div#all_my_pets > table > tbody > tr > td')
     breeds = driver.find_elements(By.CSS_SELECTOR, 'div#all_my_pets > table > tbody > tr > td:nth-of-type(2)')
     ages = driver.find_elements(By.CSS_SELECTOR, 'div#all_my_pets > table > tbody > tr > td:nth-of-type(3)')
-
+    print(names)
     driver.get('https://petfriends.skillfactory.ru/my_pets')
 
     pets_count = driver.find_element(By.XPATH, '//div[@class=".col-sm-4 left"]').text.split('\n')[1].split(': ')[1]
@@ -50,7 +50,7 @@ def test_show_all_pets(driver):
             print("No pets")
         else:
             assert images_count / pets_count >= 0.5
-
+    print(images_count)
 
     # Проверяем, что у питомцев разные имена
     set_name = set(list_names)
