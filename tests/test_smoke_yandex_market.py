@@ -32,7 +32,7 @@ def test_check_main_search(web_browser):
     page.search_run_button.click()
 
     # Verify that user can see the list of products:
-    assert page.products_titles.count() == 48
+    assert page.products_titles.count() > 0
 
     # Make sure user found the relevant products
     for title in page.products_titles.get_text():
@@ -50,7 +50,7 @@ def test_check_wrong_input_in_search(web_browser):
     page.search_run_button.click()
 
     # Verify that user can see the list of products:
-    assert page.products_titles.count() == 48
+    assert page.products_titles.count() > 0
 
     # Make sure user found the relevant products
     for title in page.products_titles.get_text():

@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 class BasePage(object):
     # конструктор класса - специальный метод с ключевым словом __init__
     # Нам нужны объект веб-драйвера, адрес страницы и время ожидани элементов
-    def __init__(self, driver, url, timeout=3):
+    def __init__(self, driver, url, timeout=1):
         self.driver = driver
         self.url = url
         self.driver.implicitly_wait(timeout)
