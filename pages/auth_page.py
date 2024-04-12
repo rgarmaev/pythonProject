@@ -5,9 +5,9 @@ import time,os
 
 class AuthPage(BasePage):
 
-    def __init__(self, driver,timeout=10):
+    def __init__(self, driver,timeout=3):
         super().__init__(driver, timeout)
-        url = os.getenv("LOGIN_URL") or "http://petfriends1.herokuapp.com/login"
+        url = os.getenv("LOGIN_URL") or "https://petfriends.skillfactory.ru/login"
         driver.get(url)
         self.email = driver.find_element(*AuthLocators.AUTH_EMAIL)
         self.passw = driver.find_element(*AuthLocators.AUTH_PASS)
