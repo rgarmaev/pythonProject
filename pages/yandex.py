@@ -22,11 +22,11 @@ class MainPage(WebPage):
     # Search button
     search_run_button = WebElement(xpath='//button[@type="submit"]')
 
-    # Titles of the products in search results #//a[contains(@href, "/product-*") and @title!=""]
-    products_titles = ManyWebElements(xpath='//h3[class=*"G_TNq _2SUA6 _33utW _13aK2 _2-NSe _1A5yJ xh-highlight"]')
+    # Titles of the products in search results
+    products_titles = ManyWebElements(xpath='//h3[@data-auto="snippet-title"]')
 
-        # Button to sort products by price
-    sort_products_by_price = WebElement(css_selector='button[data-autotest-id="dprice"]')
+    # Button to sort products by price
+    sort_products_by_price = WebElement(xpath='//button[@data-autotest-id="dprice"]')
 
     # Prices of the products in search results
-    products_prices = ManyWebElements(xpath='//div[@data-zone-name="price"]//span/*[1]')
+    products_prices = ManyWebElements(xpath='//span[@class="_3gYEe"]/following-sibling::span[@class="_1ArMm"]')
