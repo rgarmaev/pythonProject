@@ -87,4 +87,4 @@ def test_check_sort_by_price(web_browser):
     print(sorted(all_prices))
 
     # Make sure products are sorted by price correctly:
-    assert all_prices == sorted(all_prices), "Sort by price worked!"
+    assert all_prices == sorted(all_prices), "Sort by price don't worked!"
