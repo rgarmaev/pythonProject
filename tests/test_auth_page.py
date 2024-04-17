@@ -5,10 +5,10 @@ def test_authorisation(web_browser):
 
     page = AuthPage(web_browser)
 
-    page.email.send_keys('test123@yandex.ru')
+    page.email.send_keys('rgarmaev@mail.ru')
 
-    page.password.send_keys("123456")
+    page.password.send_keys("xy6nY36uq6")
 
     page.btn.click()
 
-    assert page.get_current_url() == 'http://petfriends1.herokuapp.com/all_pets'
+    assert page.get_current_url() == 'https://petfriends.skillfactory.ru/all_pets'

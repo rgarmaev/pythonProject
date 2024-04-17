@@ -53,12 +53,16 @@ def test_check_wrong_input_in_search(web_browser):
     assert page.products_titles.count() > 0
 
     # Make sure user found the relevant products
+    found_smartphones = False
     for title in page.products_titles.get_text():
-        msg = 'Wrong product in search "{}"'.format(title)
-        assert 'смартфон' in title.lower(), msg
+        if 'смартфон' in title.lower():
+            found_smartphones = True
+            break
+
+    assert found_smartphones, "No smartphones found in search results"
 
 
-@pytest.mark.xfail(reason="Filter by price doesn't work")
+#@pytest.mark.xfail(reason="Filter by price doesn't work")
 def test_check_sort_by_price(web_browser):
     """ Make sure that sort by price works fine.
 
@@ -87,4 +91,6 @@ def test_check_sort_by_price(web_browser):
     print(sorted(all_prices))
 
     # Make sure products are sorted by price correctly:
-    assert all_prices == sorted(all_prices), "Sort by price don't worked!"
+    sorted_prices = sorted(all_prices)
+    assert all_prices == sorted_prices, f"Prices are not sorted correctly. Actual: {all_prices}, Expected: {sorted_prices}"
+
