@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- encoding=utf8 -*-
+import time
 
 # You can find very simple example of the usage Selenium with PyTest in this file.
 #
@@ -48,7 +49,7 @@ def test_check_wrong_input_in_search(web_browser):
     # Try to enter "смартфон" with English keyboard:
     page.search = 'cvfhnajy'
     page.search_run_button.click()
-
+    page.wait_page_loaded(wait_for_xpath_to_disappear='//h3[@class="G_TNq _2SUA6 _33utW"]')
     # Verify that user can see the list of products:
     assert page.products_titles.count() > 0
 
